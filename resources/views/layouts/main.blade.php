@@ -69,6 +69,10 @@ $url = $url[0];
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('bikes.index')}}">Bikes</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('stamina.index')}}">Stamina</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link disabled" href="{{route('contact.index')}}">Contact</a>
                             </li>

@@ -18,6 +18,10 @@ Route::get('/', function () {
 });
 
 Route::get('/post', 'PostController@index')->name('post.index');
+
+Route::get('/stamina', 'StaminaController@index')->name('stamina.index');
+
+
 Route::get('/contacts', 'ContactController@index')->name('contact.index');
 Route::get('/about', 'AboutController@index')->name('about.index');
 Route::get('/main', 'MainController@index')->name('main.index');

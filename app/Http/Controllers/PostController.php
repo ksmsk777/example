@@ -2,17 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Post;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
+        $category = Category::find(1);
+        $post = Post::find(1);
+        dd($post->category);
 
-        return view('post.index', compact('posts'));
-
+        //return view('post.index', compact('posts'));
     }
 
     public function create()
@@ -29,8 +32,6 @@ class PostController extends Controller
 
     public function update(Post $post)
     {
-
-
         $data = request()->validate([
             'title' => 'string',
             'content' => 'string',
@@ -45,26 +46,19 @@ class PostController extends Controller
         $data = request()->validate([
             'title' => 'string',
             'content' => 'string',
-            'image' => 'string',
-
-
-        ]);
+            'image' => 'string',  ]);
         Post::create($data);
         return redirect()->route('post.index');
     }
 
-
     public function show(Post $post)
     {
         return view('post.show', compact('post'));
-
     }
-
 
     public function edit(Post $post)
     {
         return view('post.edit', compact('post'));
-
     }
 
     public function destroy(Post $post)
@@ -72,7 +66,6 @@ class PostController extends Controller
         $post->delete();
         return redirect()->route('post.index');
     }
-
-
 }
+
 

@@ -14,17 +14,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return 2222222222;
+    return view('main.index.first');
 });
 
+
+Route::get('/', 'MainController@index')->name('main.index.first');
+Route::get('/main', 'MainController@index')->name('main.index');
+Route::get('/task', 'TaskController@index')->name('task.index');
+Route::post('/task', 'TaskController@index')->name('task.index');
+
+
 Route::get('/post', 'PostController@index')->name('post.index');
+
 
 Route::get('/stamina', 'StaminaController@index')->name('stamina.index');
 
 
 Route::get('/contacts', 'ContactController@index')->name('contact.index');
 Route::get('/about', 'AboutController@index')->name('about.index');
-Route::get('/main', 'MainController@index')->name('main.index');
+
 
 Route::get('/post/create', 'PostController@create')->name('post.create');
 
@@ -42,5 +50,3 @@ Route::get('/bike/create', 'BikeController@create')->name('bike.create');
 Route::get('/bikes/{bike}/edit', 'BikeController@edit')->name('bike.edit');
 Route::patch('/bike/{bike}', 'BikeController@update')->name('bike.update');
 Route::delete('/bike/{bike}', 'BikeController@destroy')->name('bike.delete');
-
-

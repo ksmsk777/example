@@ -9,6 +9,6 @@ class StaminaController extends Controller
     public function index()
     {
         return view('stamina.index');
-
     }
 }
+    

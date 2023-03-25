@@ -28,6 +28,11 @@ $galary = array(
         "Title" => 'Красный AMG забронирован'
     ] ,
 
+    [ "Category" => 'images/gallery/plenka/Range_Rover_White' ,
+        "CategoryT" => 'images/gallery/plenka/Range_Rover_White/thumb' ,
+        "Title" => 'Белый Range Rover готов'
+    ] ,
+
     [ "Category" => 'images/gallery/plenka/discovery_bron' ,
         "CategoryT" => 'images/gallery/plenka/discovery_bron/thumb' ,
         "Title" => 'Закатали Discovery'

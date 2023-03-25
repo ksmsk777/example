@@ -7,7 +7,6 @@ $galary = array(
         "Title" => 'черный AMG c63 вытянули вмятины'
     ] ,
 
-
     [ "Category" => 'images/gallery/plenka/bmw5_white_antigrav' ,
         "CategoryT" => 'images/gallery/plenka/bmw5_white_antigrav/thumb' ,
         "Title" => 'Антигравийная пленка для BMW'

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use App\Tag;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
 
@@ -12,8 +13,10 @@ class PostController extends Controller
     public function index()
     {
         $category = Category::find(1);
+
         $post = Post::find(1);
-        dd($post->category);
+        $tag = Tag::find(1);
+        dd($tag->posts);
 
         //return view('post.index', compact('posts'));
     }

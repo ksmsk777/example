@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Post;
+use App\PostTag;
 use App\Tag;
 use Illuminate\Http\Request;
 use PhpParser\Node\Expr\FuncCall;
@@ -42,6 +43,7 @@ class PostController extends Controller
         ]);
         $post->update($data);
         return redirect()->route('post.show', $post->id);
+
     }
 
     public function store()
@@ -51,12 +53,18 @@ class PostController extends Controller
             'content' => 'string',
             'image' => 'string',
             'category_id' => '',
+            'tags' => '',
 
 
-            ]);
+        ]);
+        $tags = $data ['tags'];
+        unset($data['tags']);
 
-        Post::create($data);
-        return redirect()->route('post.index');
+        $post = Post::create($data);
+
+        $post->tags()->attach($tags);
+
+     return redirect()->route('post.index');
     }
 
     public function show(Post $post)
